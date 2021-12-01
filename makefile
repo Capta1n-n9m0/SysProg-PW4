@@ -1,4 +1,4 @@
-ARGS			=1 2 3 4
+ARGS			=
 EXECUTABLE		=main
 CC				=gcc
 CFLAGS			=-Wall -Werror --pedantic -std=c11
@@ -15,9 +15,6 @@ valgrind: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $(EXECUTABLE)
-
-main.o: main.c
-	$(CC) $(CFLAGS) 	-c -o main.o main.c
 
 .PHONY: clean
 clean:
